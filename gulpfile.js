@@ -3,6 +3,7 @@ const scss = require("gulp-sass");
 const pug = require("gulp-pug");
 const imagemin = require('gulp-imagemin');
 const browserSync = require('browser-sync').create();
+const ghpages = require('gh-pages');
 
 const signIn = () => {
     return gulp.src("./src/scss/_sign_in/**/*.scss")
@@ -43,7 +44,7 @@ const watch = () => {
     gulp.watch("./src/templates/*.pug", templateSign);
     gulp.watch("./src/img/*", img);
 }
-
+ghpages.publish('dist', function(err) {});
 exports.signIn = signIn;
 exports.templateSign = templateSign;
 exports.img = img;
