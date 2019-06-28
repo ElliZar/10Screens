@@ -13,4 +13,5 @@ router.post("/signUp", (req,res) => {
     console.log(req.body.newPassword,req.body.repeatPassword);
     res.render("complete",{choice: "Log In", choiceLink : "/",title: "Sign In"});
 });
+
 module.exports = router;
