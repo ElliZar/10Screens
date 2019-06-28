@@ -1,0 +1,13 @@
+extends base.pug
+
+block content
+    article.signIn
+        div.container
+            h1.signIn__text Reset your password
+            form.signIn__form
+                div
+                    input.email(type="password", placeholder="New password", name="newPassword")
+                div
+                    input.password(type="password",placeholder="Repeat password", name="repeatpassword")
+                div.signIn__submit
+                    button(type="submit") Reset

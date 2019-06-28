@@ -5,11 +5,10 @@ const imagemin = require('gulp-imagemin');
 const browserSync = require('browser-sync').create();
 
 const signIn = () => {
-    return gulp.src("./src/scss/_sign_in/**/*.scss")
+    return gulp.src("./src/scss/**/*.scss")
         .pipe(scss())
-        .pipe(gulp.dest("dist/css/signIn"))
+        .pipe(gulp.dest("dist/css/"))
         .pipe(browserSync.stream());
-
 }
 
 const templateSign = () => {
