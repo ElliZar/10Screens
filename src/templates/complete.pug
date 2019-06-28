@@ -1,0 +1,15 @@
+extends base.pug
+
+block content
+    article.contents
+        div.container
+            h1.contents__text Complete your account
+            form.contents__form(action="/api/complete" method="POST")
+                div
+                    input.email(type="password" placeholder="Create password" name="createPassword")
+                div
+                    input.password(type="password" placeholder="Confirm password" name="confirmPassword")
+                div
+                    
+                div.contents__submit
+                    button(type="submit") Done
