@@ -4,8 +4,10 @@ block content
     article.signIn
         div.container
             h1.signIn__text Enter your e-mail to reset your password
-            form.signIn__form
+            form.signIn__form(action="/api/sendEmail" method="POST")
                 div
                     input.email(type="email", placeholder="name@email.com" name="email")
                 div.signIn__submit
                     button(type="submit") Send
+
+    script(src="../public/javascript/email.js")

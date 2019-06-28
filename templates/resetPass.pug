@@ -4,10 +4,10 @@ block content
     article.signIn
         div.container
             h1.signIn__text Reset your password
-            form.signIn__form
+            form.signIn__form(action="/api/reset" method="POST")
                 div
                     input.email(type="password", placeholder="New password", name="newPassword")
                 div
-                    input.password(type="password",placeholder="Repeat password", name="repeatpassword")
+                    input.password(type="password",placeholder="Repeat password", name="repeatPassword")
                 div.signIn__submit
                     button(type="submit") Reset

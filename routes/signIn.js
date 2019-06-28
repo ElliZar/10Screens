@@ -7,9 +7,6 @@ router.get("/", (req,res) => {
 router.get("/email", (req,res) => {
     res.render("email",{choice: "Sign in", choiceLink : "/signUp",title: "E-mail"});
 });
-router.get("/resetPass", (req,res) => {
-    res.render("resetPass",{choice: "Log in", choiceLink : "/",title: "Reset"});
-});
 router.get("/signUp", (req,res) => {
     res.render("signUp",{choice: "Log in", choiceLink : "/",title: "Sign Up"});
 });

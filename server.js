@@ -1,15 +1,21 @@
 const express = require("express");
 const pug = require("pug");
 const path = require("path");
+const bodyParser = require("body-parser");
 const app = express();
 
 app.set("view engine", "pug");
-app.set("views", __dirname + "/src/templates");
-app.use("/public", express.static(path.join(__dirname, "src/public")));
+app.set("views", __dirname + "/templates");
+app.use("/public", express.static(path.join(__dirname, "/public")));
 
-const signIn = require("./src/routes/signIn");
+app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.json());
+
+const signIn = require("./routes/signIn");
+const api = require("./routes/api");
 
 app.use("/",signIn);
+app.use("/api",api);
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, (err) => {
@@ -19,4 +25,4 @@ app.listen(PORT, (err) => {
     else{
         console.log(`Server run on port ${PORT}`);
     }
-})
+});
