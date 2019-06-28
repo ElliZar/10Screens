@@ -1,13 +1,13 @@
 extends base.pug
 
 block content
-    article.signIn
+    article.contents
         div.container
-            h1.signIn__text Reset your password
-            form.signIn__form(action="/api/reset" method="POST")
+            h1.contents__text Reset your password
+            form.contents__form(action="/api/reset" method="POST")
                 div
                     input.email(type="password", placeholder="New password", name="newPassword")
                 div
                     input.password(type="password",placeholder="Repeat password", name="repeatPassword")
-                div.signIn__submit
+                div.contents__submit
                     button(type="submit") Reset

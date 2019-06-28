@@ -1,16 +1,16 @@
 extends base.pug
 
 block content
-     article.signIn
+     article.contents
         div.container
-            h1.signIn__text Sign up
-            form.signIn__form
-                div.signIn__name
+            h1.contents__text Sign up
+            form.contents__form(action="/api/signUp" method="POST")
+                div.contents__name
                     input.fist-name(type="text", placeholder="Enter your name" name="name")
                     input.last-name(type="text", placeholder="Last name" name="name")
                 div
                     input.username(type="text" name="username",placeholder="Uasername")
                 div
                     input.username(type="email" name="emailReg",placeholder="E-mail")
-                div.signIn__submit
+                div.contents__submit
                     button(type="submit") Get started

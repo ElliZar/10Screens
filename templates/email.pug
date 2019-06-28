@@ -1,13 +1,13 @@
 extends base.pug
 
 block content
-    article.signIn
+    article.contents
         div.container
-            h1.signIn__text Enter your e-mail to reset your password
-            form.signIn__form(action="/api/sendEmail" method="POST")
+            h1.contents__text Enter your e-mail to reset your password
+            form.__form(action="/api/sendEmail" method="POST")
                 div
                     input.email(type="email", placeholder="name@email.com" name="email")
-                div.signIn__submit
+                div.contents__submit
                     button(type="submit") Send
 
     script(src="../public/javascript/email.js")

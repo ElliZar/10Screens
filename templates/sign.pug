@@ -1,16 +1,16 @@
 extends base.pug
 
 block content
-    article.signIn
+    article.contents
         div.container
-            h1.signIn__text Sign In
-            form.signIn__form
+            h1.contents__text Sign In
+            form.contents__form
                 div
                     input.email(type="email", placeholder="name@email.com" name="email")
                 div
                     input.password(type="password" name="password",placeholder="Password")
-                div.signIn__forgot
+                div.contents__forgot
                     a(href="/email") Forgot password?
-                div.signIn__submit
+                div.contents__submit
                     button(type="submit") Sign in
 
