@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Roboto&display=swap")
+        link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Exo+2&display=swap")
+        link(rel="stylesheet", href="./css/signIn/main.css")
+        title Sign In
+    body
+        main
+            header.header
+                figure.header__logo
+                div.header__signUp
+                    span Do not have an Account?
+                    a(href="#") Sign Up
+            article.signIn
+                div.container
+                    h1.signIn__text Sign In
+                    form.signIn__form
+                        div
+                            input.email(type="email", placeholder="name@email.com" name="email")
+                        div
+                            input.password(type="password" name="password",placeholder="Password")
+                        div.signIn__forgot
+                            a(href="#") Forgot password?
+                        div.signIn__submit
+                            button(type="submit") Sign in
+
