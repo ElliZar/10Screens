@@ -1,8 +1,11 @@
-<!DOCTYPE html>
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        meta(http-equiv="X-UA-Compatible", content="ie=edge")
-        title E-mail
-    body
+extends base.pug
+
+block content
+    article.contents
+        div.container
+            h1.contents__text Enter your e-mail to reset your password
+            form.contents__form
+                div
+                    input.email(type="email", placeholder="name@email.com" name="email")
+                div.contents__submit
+                    button(type="submit") Send

@@ -48,12 +48,15 @@ main{
         }
     }
 }
-.signIn{
+
+article{
     width: 650px;
     margin: 135px auto;
     background: #FFFFFF;
     box-shadow: 0px 5px 40px rgba(0, 45, 113, 0.06);
     border-radius: 10px;
+}
+.contents{
     &__text{
         color: #002396;
         font-family: $exo2;
@@ -63,6 +66,7 @@ main{
         line-height: 34px;
         letter-spacing: 0.4px;
         padding-top: 72px;
+        width: 75%;
     }
     &__form{
         padding-top: 50px;
@@ -115,6 +119,12 @@ main{
                 background-color: rgb(26, 206, 223);
                 cursor: pointer;
             }
+        }
+    }
+    &__name{
+        display: flex;
+        & input{
+            width: 200px;
         }
     }
 }
