@@ -3,12 +3,19 @@ const scss = require("gulp-sass");
 const pug = require("gulp-pug");
 const imagemin = require('gulp-imagemin');
 const browserSync = require('browser-sync').create();
-const signIn = () => {
-    return gulp.src("./src/scss/_sign_in/**/*.scss")
-        .pipe(scss())
-        .pipe(gulp.dest("dist/css/signIn"))
-        .pipe(browserSync.stream());
+const cleanCSS = require('gulp-clean-css');
+const autoprefixer = require("gulp-autoprefixer");
 
+const signIn = () => {
+    return gulp.src("./src/scss/**/*.scss")
+        .pipe(scss())
+        .pipe(autoprefixer({
+            overrideBrowserslist: ["last 3 version"],
+            cascade: false
+        }))
+        .pipe(cleanCSS({compatibility: 'ie8'}))
+        .pipe(gulp.dest("dist/css/"))
+        .pipe(browserSync.stream());
 }
 
 const templateSign = () => {
@@ -38,7 +45,7 @@ const watch = () => {
             index: "sign.html"
         }
     });
-    gulp.watch("./src/scss/_sign_in/**/*.scss", signIn);
+    gulp.watch("./src/scss/**/*.scss", signIn);
     gulp.watch("./src/templates/*.pug", templateSign);
     gulp.watch("./src/img/*", img);
 }
