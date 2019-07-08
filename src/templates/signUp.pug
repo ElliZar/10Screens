@@ -1,4 +1,4 @@
-extends layout/base.pug
+extends layout/baseAuth.pug
 block variables
     - const choice = "Sign In"
     - const choiceLink = "/sign.html"
@@ -7,14 +7,12 @@ block variables
 block content
      article.contents
         div.container
-            h1.contents__text Sign up
-            form.contents__form
-                div.contents__name
-                    input.fist-name(type="text", placeholder="Enter your name" name="name")
-                    input.last-name(type="text", placeholder="Last name" name="name")
-                div
-                    input.username(type="text" name="username",placeholder="Uasername")
-                div
-                    input.username(type="email" name="emailReg",placeholder="E-mail")
-                div.contents__submit
+            h1.author__text Sign up
+            form.author__form
+                div.author__name
+                    input.name(type="text", placeholder="First name" name="name")
+                    input.name(type="text", placeholder="Last name" name="name")
+                input.username(type="text" name="username",placeholder="Username")
+                input.password(type="email" name="emailReg",placeholder="E-mail")
+                div.author__submit
                     button(type="submit") Get started

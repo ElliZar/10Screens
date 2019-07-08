@@ -5,6 +5,7 @@ const imagemin = require('gulp-imagemin');
 const browserSync = require('browser-sync').create();
 const cleanCSS = require('gulp-clean-css');
 const autoprefixer = require("gulp-autoprefixer");
+const uglify = require("gulp-uglify-es").default;
 
 const signIn = () => {
     return gulp.src("./src/scss/**/*.scss")
@@ -32,10 +33,18 @@ const img = () => {
         .pipe(browserSync.stream());
 }
 
+const minify = () => {
+    return gulp.src("./src/javascript/*.js")
+        .pipe(uglify())
+        .pipe(gulp.dest("dist/js"))
+        .pipe(browserSync.stream());
+}
+
 const build = async () => {
     await signIn();
     await templateSign();
     await img();
+    await minify();
 }
 
 const watch = () => {
@@ -48,9 +57,11 @@ const watch = () => {
     gulp.watch("./src/scss/**/*.scss", signIn);
     gulp.watch("./src/templates/*.pug", templateSign);
     gulp.watch("./src/img/*", img);
+    gulp.watch("./src/javascript/main.js", minify);
 }
 exports.signIn = signIn;
 exports.templateSign = templateSign;
 exports.img = img;
 exports.build = build;
 exports.watch = watch;
+exports.minify = minify;
